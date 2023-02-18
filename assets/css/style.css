@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+--header-height: 48px;
+}
+.bg-color--black{
+    background-color: black;
+}
+/* header section */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: black;
+    font-size: 1.5rem;
+    color: white;
+}
+/* navigation */
+#header .navigation {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+ul.navigation li a{
+    text-decoration: none;
+    color: white;
+}
+ul.navigation > li{
+    display: inline-block;
+    line-height: var(--header-height);
+    min-width: 100px;
+    text-align: center;
+    padding: 0px 24px;
+    cursor: pointer;
+}
+ul.navigation li:hover{
+    background-color: #ccc;
+    color: black;
+}
+ul.navigation li:hover a{
+    color: black;
+}
+/* submenu in navigation */
+.navigation li:last-child{
+    position: relative;
+}
+.navigation li:last-child:hover .submenu{
+    display: block;
+}
+.navigation ul.submenu{
+    display: none;
+    position: absolute;
+    left: 0;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+}
+.navigation ul.submenu li{
+    min-width: 150px;
+    height: 32px;
+    line-height: normal;
+    text-align: left;
+    padding: 8px 0px 8px 16px;
+    text-transform: capitalize;
+    list-style: none;
+    background-color: white;
+    color: black;
+}
+.navigation ul.submenu li:hover{
+    background-color: #ccc;
+}
+/* search box */
+#header .search-box {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: var(--header-height);
+    width: 62px;
+    text-align: center;
+}
+#header .search-box i{
+    line-height: var(--header-height);
+}
+#header .search-box:hover{
+    background-color: #F44336;
+    cursor: pointer;
+}
+/* slider */
+#slider{
+    position: relative;
+    margin-top: var(--header-height);
+}
+#slider .slider__img{
+    padding-top: 50%;
+    background: url(/assets/img/chicago.jpg) top center / cover no-repeat, url(/assets/img/img-holder.jpg) top center / cover no-repeat;
+}
+#slider .slider__text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 32px 16px;
+}
+.slider__text .header{
+    font-size: 2.4rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0px;
+}
+.slider__text .body{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 15px 0px;
+}
+/* content */
+#content .wrapper{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 16px;
+}
+.wrapper .wrapper__title{
+    font-size: 3rem;
+    letter-spacing: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px 0px;
+}
+.wrapper .wrapper__subtitle{
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 15px 0px;
+    opacity: 0.8;
+    text-align: center;
+}
+ /* about */
+.about  .about__text{
+    font-size: 1.5rem;
+    text-align: justify;
+    margin: 15px;
+    line-height: 1.5;
+}
+.about .about__member-list{
+    padding: 32px 0px;
+    display: flex;
+
+}
+.about__member-list .member{
+    width: 30%;
+    margin-left: auto;
+}
+.about__member-list .member p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 10px 0px;
+}
+.about__member-list .member img {
+    max-width: 156px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+/* tour */
+.tour .wrapper__title{
+    color: white;
+}
+.tour .wrapper__subtitle{
+    color: #ccc;
+}
+/* tour calendar */
+.tour .tour__calendar{
+    margin: 48px 0px 32px 0px;
+    background-color: white;
+    color: #757575;
+    font-size: 1.5rem;
+    list-style: none;
+}
+.tour .tour__calendar li{
+    padding: 8px 16px;
+    border-bottom: 1px #ccc solid;
+}
+.tour__calendar .sold_out{
+    display: inline-block;
+    margin-left: 16px;
+}
+.tour__calendar .sold_out:after{
+    content: "Sold out";
+    background-color: #F44336;
+    color: white;
+    padding: 2px 8px;
+}
+.tour__calendar .remain{
+    float: right;
+    margin-right: 16px;
+}
+.tour__calendar .remain::after{
+    content: attr(number);
+    background-color: black;
+    color: white;
+    padding: 1px 6px;
+    border-radius: 50%;
+}
+.tour .tour_list{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.tour_list .ticket{
+    max-width: 32%;
+}
+.tour_list .ticket img{
+    max-width: 100%;
+    display: block;
+}
+.tour_list .ticket img:hover{
+    filter: brightness(80%);
+}
+.tour_list .ticket_info{
+    padding: 15px;
+    background-color: white;
+}
+.ticket_info .subtitle{
+    margin: 15px 0px;
+    color: #333;
+    opacity: 0.75;
+}
+.ticket_info .content{
+    margin: 15px 0px;
+    line-height: 1.5;
+}
+.button{
+    background-color: black;
+    color: white;
+    text-transform: capitalize;
+    padding: 12px 20px;
+    border: none;
+}
+.button:hover{
+    background-color: #F44336;
+    cursor: pointer;
+}
