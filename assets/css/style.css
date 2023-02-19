@@ -23,6 +23,7 @@ html {
     background-color: black;
     font-size: 1.5rem;
     color: white;
+    z-index: 999;
 }
 /* navigation */
 #header .navigation {
@@ -243,10 +244,67 @@ ul.navigation li:hover a{
     background-color: black;
     color: white;
     text-transform: capitalize;
-    padding: 12px 20px;
-    border: none;
+    padding: 12px 20px!important;
+    border: none!important;
 }
 .button:hover{
     background-color: #F44336;
     cursor: pointer;
+}
+/* Contact */
+#content .contact{
+    font-size: 1.8rem;
+}
+.contact .wrapper__contact{
+    padding-top: 64px;
+    display: flex;
+}
+.contact .contact__info, .contact .contact__input{
+    width: 50%;
+}
+.contact .contact__info{
+    list-style: none;
+}
+.contact .contact__info i{
+    margin-right: 16px;
+}
+.contact .contact__info a{
+    text-decoration: none;
+    color: black;
+}
+.contact .contact__input input{
+    padding: 8px;
+    border: 1px solid black;
+    line-height: 1.6;
+}
+.contact__input input{
+    margin-bottom: 8px;
+    width: 49%;
+}
+.contact__input input:nth-child(2){
+    float: right;
+}
+.contact__input input:last-child{
+    float: right;
+    width: auto;
+    margin-top: 16px;
+}
+.contact__input input:nth-child(3){
+    width: 100%;
+}
+#content .map{
+    position: relative;
+    background: url(/assets/img/map.jpg) center / cover no-repeat;
+    padding-top: 56%;
+}
+#content .map::after{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.1);
+
 }
