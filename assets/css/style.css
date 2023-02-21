@@ -319,6 +319,7 @@ ul.submenu li a{
 }
 
 #modal{
+    display: none;
     position: fixed;
     background: rgba(0, 0, 0, 0.3);
     top: 0;

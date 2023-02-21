@@ -83,7 +83,7 @@
                                     <h4 class="title">New York</h4>
                                     <p class="subtitle">Fri 27 Nov 2016</p>
                                     <p class="content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <button class="button">buy tickets</button>
+                                    <button class="button js-btn-ticket">buy tickets</button>
                                 </div>
                             </div>
                             <div class="ticket">
@@ -92,7 +92,7 @@
                                     <h4 class="title">Paris</h4>
                                     <p class="subtitle">Sat 28 Nov 2016</p>
                                     <p class="content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <button class="button">buy tickets</button>
+                                    <button class="button js-btn-ticket">buy tickets</button>
                                 </div>
                             </div>
                             <div class="ticket">
@@ -101,7 +101,7 @@
                                     <h4 class="title">San Francisco</h4>
                                     <p class="subtitle">Sun 29 Nov 2016</p>
                                     <p class="content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                    <button class="button">buy tickets</button>
+                                    <button class="button js-btn-ticket">buy tickets</button>
                                 </div>
                             </div>
                         </div>
@@ -122,9 +122,9 @@
                         </ul>
                         <div class="contact__input">
                             <form action="">
-                                <input type="text" name="name" id="name" placeholder="Name">
-                                <input type="text" name="email" id="email" placeholder="Email">
-                                <input type="text" name="Message" id="Message" placeholder="Message">
+                                <input type="text" name="name" id="name" placeholder="Name" required>
+                                <input type="text" name="email" id="email" placeholder="Email" required>
+                                <input type="text" name="Message" id="Message" placeholder="Message" required>
                                 <input type="submit" class="button" value="SEND">
                             </form>
                         </div>
@@ -140,20 +140,46 @@
             <div class="validation">
                 <div class="header">
                     <i class="fa-solid fa-suitcase"></i> Tickets
-                    <button><i class="fa-solid fa-xmark"></i></button>
+                    <button class="js-btn-close"><i class="fa-solid fa-xmark"></i></button>
                 </div>
                 <div class="info">
                     <form action="#">
                         <label for="quantity"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Tickets, $15 per person</label>
-                        <input id="quantity" type="text" placeholder="How many ?">
+                        <input id="quantity" type="text" placeholder="How many ?" required>
                         <label for="user-email"><i class="fa-solid fa-user"></i> Send To</label>
-                        <input id="user-email" type="text" placeholder="Enter email">
+                        <input id="user-email" type="text" placeholder="Enter email" required>
                         <input class="hover-opacity--low" type="submit" value="Pay">
                     </form>
-                    <button class="hover-opacity--low">Close <i class="fa-solid fa-xmark"></i></button>
+                    <button class="hover-opacity--low js-btn-close">Close <i class="fa-solid fa-xmark"></i></button>
                     <p>Need <a href="#">help ?</a></p>
                 </div>
             </div>
         </div>
     </body>
+    <script>
+        const modal = document.querySelector('#modal');
+        const buyBtns = document.querySelectorAll('.js-btn-ticket');
+        const validation = document.querySelector('.validation');
+        const closeBtns = document.querySelectorAll('.js-btn-close')
+
+        function closeModal()
+        {
+            modal.style.display = 'none';
+        }
+        function openModal()
+        {
+            modal.style.display = 'block';
+        }
+
+        modal.addEventListener('click', closeModal);
+        buyBtns.forEach(btn => {
+            btn.addEventListener('click', openModal);
+        });
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', closeModal);
+        });
+        validation.addEventListener('click', function (event){
+            event.stopPropagation();
+        });
+    </script>
 </html>
